@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b1bwv45f0mhwy"]
+
+[ext_resource type="PackedScene" uid="uid://bq6yiy27xj1w1" path="res://Pool_table_finished.blend" id="1_ig7tw"]
+
+[node name="Node3D" type="Node3D" unique_id=1574167174]
+
+[node name="Pool_table_finished" parent="." unique_id=943625640 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3744632, 0, 0.09073019)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Pool_table_finished" unique_id=1359923100]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pool_table_finished" unique_id=1968058113]
+
+[editable path="Pool_table_finished"]

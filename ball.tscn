@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dnyxjyy2d5v72"]
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=653705025]
+mass = 0.165

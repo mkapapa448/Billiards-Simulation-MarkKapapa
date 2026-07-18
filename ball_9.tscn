@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c2rdjsjdtb8xt"]
+
+[ext_resource type="PackedScene" uid="uid://bd1cthv45ld8y" path="res://Pool_ball_9.blend" id="1_hemyf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7848c"]
+radius = 0.029
+
+[node name="ball9" type="RigidBody3D" unique_id=653705025]
+mass = 0.165
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1494074405]
+shape = SubResource("SphereShape3D_7848c")
+
+[node name="Pool_ball_9" parent="." unique_id=814545789 instance=ExtResource("1_hemyf")]
