@@ -48,14 +48,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07203889, 0)
 
 [node name="over_cam" type="Camera3D" parent="." unique_id=940141270]
 transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 0, 1.5, 0)
-current = true
 
 [node name="cue" parent="." unique_id=663563593 instance=ExtResource("2_cegan")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31392244, 1.4539515)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24043274, 0)
 script = ExtResource("3_cegan")
 
 [node name="cue_cam" type="Camera3D" parent="cue" unique_id=1463000739]
 transform = Transform3D(-1, 1.5180806e-08, -8.609462e-08, 0, 0.9848077, 0.17364818, 8.742278e-08, 0.17364818, -0.9848077, 0, 0.079027236, -0.17304826)
+current = true
 fov = 60.0
 
 [node name="ball1" parent="." unique_id=653705025 instance=ExtResource("3_82xsv")]
