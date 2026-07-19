@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Billiards_Simulation_Mark_Kapapa"
+run/main_scene="uid://b1bwv45f0mhwy"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

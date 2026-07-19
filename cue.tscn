@@ -10,6 +10,7 @@ points = PackedVector3Array(-0.0001897304, -0.0011419622, -0.0060952385, 0.00018
 
 [node name="cue" type="RigidBody3D" unique_id=663563593]
 mass = 0.55
+continuous_cd = true
 
 [node name="Cue" parent="." unique_id=1193370901 instance=ExtResource("1_nykms")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.72)
