@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bk813g2f1xn3p" path="res://table.tscn" id="1_074og"]
 [ext_resource type="PackedScene" uid="uid://dfcc4l8pha5b2" path="res://cue.tscn" id="2_cegan"]
 [ext_resource type="PackedScene" uid="uid://864bactkjwya" path="res://ball_1.tscn" id="3_82xsv"]
+[ext_resource type="Script" uid="uid://dpm1baur7nomn" path="res://cue.gd" id="3_cegan"]
 [ext_resource type="PackedScene" uid="uid://ba2g4t1o1dplg" path="res://ball_2.tscn" id="4_getpj"]
 [ext_resource type="PackedScene" uid="uid://ctsrv2owdqgon" path="res://ball_3.tscn" id="5_ryguw"]
 [ext_resource type="PackedScene" uid="uid://cilq0amh3wvha" path="res://ball_4.tscn" id="6_d13ii"]
@@ -45,56 +46,62 @@ environment = SubResource("Environment_82xsv")
 [node name="table" parent="." unique_id=1509321774 instance=ExtResource("1_074og")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07203889, 0)
 
+[node name="over_cam" type="Camera3D" parent="." unique_id=940141270]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 0, 1.5, 0)
+current = true
+
 [node name="cue" parent="." unique_id=663563593 instance=ExtResource("2_cegan")]
-transform = Transform3D(1, 0, 0, 0, 0.99892414, 0.0463742, 0, -0.0463742, 0.99892414, 0.2368313, 0.45757067, -0.24750763)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31392244, 1.4539515)
+script = ExtResource("3_cegan")
+
+[node name="cue_cam" type="Camera3D" parent="cue" unique_id=1463000739]
+transform = Transform3D(-1, 1.5180806e-08, -8.609462e-08, 0, 0.9848077, 0.17364818, 8.742278e-08, 0.17364818, -0.9848077, 0, 0.079027236, -0.17304826)
+fov = 60.0
 
 [node name="ball1" parent="." unique_id=653705025 instance=ExtResource("3_82xsv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.029, -0.204)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.029, 0.6485187)
 
 [node name="ball2" parent="." unique_id=2031432287 instance=ExtResource("4_getpj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06, 0.029, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06, 0.029, 0.8525187)
 
 [node name="ball3" parent="." unique_id=551293540 instance=ExtResource("5_ryguw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0.029, -0.051)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0.029, 0.8015187)
 
 [node name="ball4" parent="." unique_id=1239733804 instance=ExtResource("6_d13ii")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.029, -0.051)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.029, 0.8015187)
 
 [node name="ball5" parent="." unique_id=304751984 instance=ExtResource("7_1u8w0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06, 0.029, -0.102)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06, 0.029, 0.7505187)
 
 [node name="ball6" parent="." unique_id=383802686 instance=ExtResource("8_0odxb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0.029, -0.102)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0.029, 0.7505187)
 
 [node name="ball7" parent="." unique_id=1105549302 instance=ExtResource("9_lswn8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0.029, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0.029, 0.8525187)
 
 [node name="ball8" parent="." unique_id=1471273075 instance=ExtResource("10_a6jrf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.029, -0.102)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.029, 0.7505187)
 
 [node name="ball9" parent="." unique_id=570551048 instance=ExtResource("11_xuqvo")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.09, 0.029, -0.051)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.09, 0.029, 0.8015187)
 
 [node name="ball10" parent="." unique_id=418864607 instance=ExtResource("12_qsp4k")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.09, 0.029, -0.051)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.09, 0.029, 0.8015187)
 
 [node name="ball11" parent="." unique_id=542697853 instance=ExtResource("13_kq58d")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.03, 0.029, -0.153)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.03, 0.029, 0.6995187)
 
 [node name="ball12" parent="." unique_id=1375460133 instance=ExtResource("14_seu75")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.12, 0.029, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.12, 0.029, 0.8525187)
 
 [node name="ball13" parent="." unique_id=2086177814 instance=ExtResource("15_htxhm")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.029, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.029, 0.8525187)
 
 [node name="ball14" parent="." unique_id=960194948 instance=ExtResource("16_jq2sk")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.03, 0.029, -0.153)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.03, 0.029, 0.6995187)
 
 [node name="ball15" parent="." unique_id=1398603537 instance=ExtResource("17_4k2k6")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.12, 0.029, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.12, 0.029, 0.8525187)
 
 [node name="cue_ball" parent="." unique_id=1035599544 instance=ExtResource("18_0rl1p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045083523, 0.09947497, 0.5433316)
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1463000739]
-transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 0, 1.5770931, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0.3375187)

@@ -2,11 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://bxkrf45xawlxa" path="res://Pool_ball_15.blend" id="1_76yys"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_76yys"]
+friction = 0.75
+bounce = 0.95
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_7848c"]
 radius = 0.029
 
 [node name="ball15" type="RigidBody3D" unique_id=653705025]
 mass = 0.165
+physics_material_override = SubResource("PhysicsMaterial_76yys")
+continuous_cd = true
+angular_damp = 0.4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1494074405]
 shape = SubResource("SphereShape3D_7848c")
