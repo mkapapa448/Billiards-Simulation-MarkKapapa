@@ -48,9 +48,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07203889, 0)
 
 [node name="over_cam" type="Camera3D" parent="." unique_id=940141270]
 transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 0, 1.5, 0)
+size = 2.0
+
+[node name="side_cam" type="Camera3D" parent="." unique_id=1412501965]
+transform = Transform3D(0.81143063, 0.1545563, -0.56364244, -0.021369338, 0.9716009, 0.23565884, 0.58405805, -0.17917614, 0.79168946, -1.0277314, 0.57339597, 1.8034499)
+size = 2.0
 
 [node name="cue" parent="." unique_id=663563593 instance=ExtResource("2_cegan")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24043274, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13061655, 0)
+freeze = false
+contact_monitor = true
+max_contacts_reported = 10
 script = ExtResource("3_cegan")
 
 [node name="cue_cam" type="Camera3D" parent="cue" unique_id=1463000739]
@@ -105,3 +113,6 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.1
 
 [node name="cue_ball" parent="." unique_id=1035599544 instance=ExtResource("18_0rl1p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0.3375187)
+
+[connection signal="body_entered" from="cue" to="cue" method="_on_body_entered"]
+[connection signal="body_exited" from="cue" to="cue" method="_on_body_exited"]
