@@ -1,4 +1,6 @@
-extends RigidBody3D
+extends Node3D
+@export var cue: RigidBody3D
+
 var direction = 0
 
 var move_speed = 0.75
@@ -22,8 +24,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var forward = Input.get_axis("move_backward", "move_forward")
 	var side = Input.get_axis("move_left", "move_right")
-	
-	if flying == false:
+	if cue.flying == false:
 		var zvel = (transform.basis.z * forward * move_speed)
 		zvel.y = 0
 		
@@ -50,39 +51,3 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_released("charge"):
 			shoot = true
 		
-	original_position.y = 0.131
-	
-	if shoot == true:
-		var z_direction = global_transform.basis.z
-		original_position = position
-		original_rotation = rotation    
-		flying = true
-		apply_central_force(z_direction * charge)
-		
-		charge = 0
-		shoot = false
-	elif flying == false and reset == true:
-		position = original_position
-		rotation = original_rotation
-		linear_velocity = Vector3.ZERO
-		angular_velocity = Vector3.ZERO
-		reset = false
-		
-
-func _on_body_exited(body: Node) -> void:
-	flying = false
-	reset = true
-
-func _on_body_entered(body: Node) -> void:
-	if body.name == "table":
-		flying = false
-		reset = true
-	#elif body.name != "cue_ball" and shots == 0:
-		#flying = false
-		#reset = true
-	else:
-		shots += 1
-
-
-func _on_pockets_body_entered(body: Node3D) -> void:
-	pass # Replace with function body.
